@@ -76,8 +76,9 @@ public class PostScoreRefreshJob implements Job, CommunityConstant {
         List<DiscussPost> list=new ArrayList<>();
         Map<String, List<DiscussPost>> map=new HashMap<>();
         list=discussPostMapper.selectDiscussPosts(0, 0,10, 1);
-        map.put(0+"+"+10,list);
-        redisTemplate.opsForValue().set("discussPost1",list);
+        for (int i = 1; i <= 10; i++)
+        redisTemplate.opsForValue().set("hotDiscussPost"+i,list.get(i - 1));
+
         redisTemplate.opsForValue().set("quartz",0);
         // put 也可以
      //  redisTemplate.opsForHash().putAll("discussPost",map);

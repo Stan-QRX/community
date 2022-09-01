@@ -11,6 +11,7 @@ import com.nowcoder.community.service.DiscussPostService;
 import com.nowcoder.community.service.LikeService;
 import com.nowcoder.community.service.UserService;
 import com.nowcoder.community.util.CommunityConstant;
+import com.sun.xml.internal.ws.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -50,7 +51,10 @@ public class HomeController implements CommunityConstant {
         // 方法调用之前,SpringMVC会自动实例化（调用set方法）Model和Page，当然只是对象，并将Page注入Model.
         // 所以,在thymeleaf中可以直接访问Page对象中的数据.若调用对象的非成员变量，会使用Java代码的get方法的返回值
 
-        page.setRows(discussPostService.findDiscussPostRows(0));
+        page.setRows(discussPostService.findDiscussPostRows(0)); // 因为要计算末页 需要rows
+       /*  <li class="page-item">
+                <a class="page-link" th:href="@{${page.path}(current=${page.total})}">末页</a>
+            </li>*/
         page.setPath("/index?orderMode="+orderMode);
 //          有默认值，可以通过get方法计算得出
 

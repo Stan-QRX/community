@@ -42,7 +42,7 @@ public class MessageController implements CommunityConstant {
         page.setPath("/letter/list");
         page.setRows(messageService.findConversationCount(user.getId()));
 
-        // 会话列表
+        // 会话列表  <!--注意显示用户与所有人的消息中最新的一条-->
         List<Message> conversationList = messageService.findConversations(user.getId(), page.getOffset(), page.getLimit());
         List<Map<String, Object>> conversations = new ArrayList<>();
         if (conversationList != null) {
@@ -166,6 +166,7 @@ public class MessageController implements CommunityConstant {
         //前端根据是否为空判断是否显示相关主题内容
         messageVO.put("message", message);
 
+        // 查询最新评论类通知
         if (message != null) {
             //对html标签反转回来
             String content = HtmlUtils.htmlUnescape(message.getContent());

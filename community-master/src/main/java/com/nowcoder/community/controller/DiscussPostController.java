@@ -244,17 +244,20 @@ public class DiscussPostController implements CommunityConstant {
     @ResponseBody
     public String setDelete(int id)  {
         int tag = 0;
-        List<DiscussPost> list = (List<DiscussPost>) redisTemplate.opsForValue().get("discussPost1");
-       for (DiscussPost discussPost : list) {
-           if (discussPost.getId() == id )
-           {
-               list.remove(discussPost); //删除缓存
-               redisTemplate.opsForValue().set("discussPost1",list);
-               tag =1;
-               break;
-           }
-       }
+        int postId = 0;
+        for (int i = 1; i <= 10; i++) {
+            DiscussPost post = (DiscussPost) redisTemplate.opsForValue().get("hotDiscussPost"+i);
+            if (post != null && post.getId() == id) {
+                redisTemplate.delete("hotDiscussPost" + i);
+                postId = i;
+                tag = 1;
+                break;
+            }
+        }
+
         discussPostService.updateStatus(id, 2);  // 更新数据库  很快 0.03s
+
+        // 不是热帖 也需要正常更新数据库
        if (tag == 1 && (int)redisTemplate.opsForValue().get("quartz") == 1) {
            while((int)redisTemplate.opsForValue().get("quartz") == 1) {
                try {
@@ -263,7 +266,7 @@ public class DiscussPostController implements CommunityConstant {
                    e.printStackTrace();
                }
            }
-           redisTemplate.opsForValue().set("discussPost1",list);
+           redisTemplate.delete("hotDiscussPost" + postId); //延时双删
        }
 
 

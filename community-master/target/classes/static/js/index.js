@@ -9,7 +9,7 @@ function publish() {
 	var title = $("#recipient-name").val();
 	var content = $("#message-text").val().replace(/\r\n/g, '<br/>').replace(/\n/g, '<br/>').replace(/\s/g, ' ');
 	// 发送异步请求(POST)
-	$.post(
+	$.post(PathVariable
 		CONTEXT_PATH + "/discuss/add",
 		{"title":title,"content":content},
 		function(data) {

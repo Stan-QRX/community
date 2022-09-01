@@ -1,5 +1,6 @@
 package com.nowcoder.community.controller.interceptor;
 
+import com.nowcoder.community.annotation.LoginRequired;
 import com.nowcoder.community.entity.LoginTicket;
 import com.nowcoder.community.entity.User;
 import com.nowcoder.community.service.UserService;
@@ -12,11 +13,13 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.context.SecurityContextImpl;
 import org.springframework.stereotype.Component;
+import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.lang.reflect.Method;
 import java.util.Date;
 
 @Component
@@ -49,8 +52,25 @@ public class LoginTicketInterceptor implements HandlerInterceptor {
                 Authentication authentication = new UsernamePasswordAuthenticationToken(
                         user, user.getPassword(), userService.getAuthorities(user.getId()));
                 SecurityContextHolder.setContext(new SecurityContextImpl(authentication));
+                //  return true;
             }
         }
+
+        //
+//        else if (handler instanceof HandlerMethod) {
+//            HandlerMethod handlerMethod = (HandlerMethod) handler;
+//            Method method = handlerMethod.getMethod();
+//            // 判断方法有无 LoginRequired 注解
+//            LoginRequired loginRequired = method.getAnnotation(LoginRequired.class);
+//            if (loginRequired != null ) {
+//                // 重定向
+//                response.sendRedirect(request.getContextPath() + "/login");
+//                return false;
+//            }
+//            else
+//                return true;
+//        }
+
 
         return true;
     }

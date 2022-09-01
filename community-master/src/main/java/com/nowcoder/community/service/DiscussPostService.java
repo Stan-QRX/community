@@ -130,7 +130,14 @@ public class DiscussPostService {
 //            }
             System.out.println("正常！redis有缓存！！");
 //            if(Math.random()>0.5)
-                return (List<DiscussPost>)redisTemplate.opsForValue().get("discussPost1");
+            List<DiscussPost> list = new ArrayList<>();
+            for (int i = 1; i <= 10; i++) {
+                DiscussPost post = (DiscussPost) redisTemplate.opsForValue().get( "hotDiscussPost"+i);
+                if (post != null)
+                    list.add(post);
+            }
+
+                return list;
           // return discussPostMapper.selectDiscussPosts(userId, offset, limit,orderMode);
 
       //      return (List<DiscussPost>) redisTemplate.opsForHash().get("discussPost",0+"+"+10);

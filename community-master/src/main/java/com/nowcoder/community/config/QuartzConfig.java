@@ -51,8 +51,8 @@ public class QuartzConfig {
         factoryBean.setJobClass(PostScoreRefreshJob.class);
         factoryBean.setName("postScoreRefreshJob");
         factoryBean.setGroup("communityJobGroup");
-        factoryBean.setDurability(true);
-        factoryBean.setRequestsRecovery(true);
+        factoryBean.setDurability(true); //持久化
+        factoryBean.setRequestsRecovery(true); // 崩溃允许恢复
         return factoryBean;
     }
 //
@@ -60,7 +60,7 @@ public class QuartzConfig {
     @Bean
     public SimpleTriggerFactoryBean postScoreRefreshTrigger(JobDetail postScoreRefreshJobDetail) {
         SimpleTriggerFactoryBean factoryBean = new SimpleTriggerFactoryBean();
-        factoryBean.setJobDetail(postScoreRefreshJobDetail);
+        factoryBean.setJobDetail(postScoreRefreshJobDetail); //postScoreRefreshJobDetail方法同名 同名bean注入
         factoryBean.setName("postScoreRefreshTrigger");
         factoryBean.setGroup("communityTriggerGroup");
         factoryBean.setRepeatInterval(1000 * 1 );   // 5min 执行一次

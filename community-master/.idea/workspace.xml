@@ -59,7 +59,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../east-project/dassetportal-feature-3.0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/nowcoder/community" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -72,18 +72,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\code-dev\community-master\src\main\java\com\nowcoder\community" />
       <recent name="F:\Idea code\community\src\main\resources\templates" />
       <recent name="F:\Idea code\community\src\main\resources\static\img" />
       <recent name="F:\Idea code\community\src\test\java\com\newcoder\community" />
       <recent name="F:\Idea code\community\src\main\java\com\nowcoder\community" />
-      <recent name="F:\Idea code\community\src\test\java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.nowcoder.community.util" />
       <recent name="com.nowcoder.community.controller.advice" />
       <recent name="com.nowcoder.community.actuator" />
       <recent name="com.newcoder.community" />
       <recent name="com.nowcoder.community.controller" />
-      <recent name="com.nowcoder.community.config" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -91,38 +91,7 @@
       <command value="findDiscussPosts" />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.CommunityApplication (1)">
-    <configuration name="CaffeineTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="community" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.newcoder.community.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.newcoder.community" />
-      <option name="MAIN_CLASS_NAME" value="com.newcoder.community.CaffeineTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CaffeineTests.initDataForTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="community" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.newcoder.community.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.newcoder.community" />
-      <option name="MAIN_CLASS_NAME" value="com.newcoder.community.CaffeineTests" />
-      <option name="METHOD_NAME" value="initDataForTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ElasticsearchTests.testInsertList">
     <configuration name="CaffeineTests.testCache" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="community" />
       <extension name="coverage">
@@ -155,8 +124,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RedisTests.testHashes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="community" />
+    <configuration name="ElasticsearchTests.testInsertList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="community-master" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.newcoder.community.*" />
@@ -164,9 +133,40 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.newcoder.community" />
-      <option name="MAIN_CLASS_NAME" value="com.newcoder.community.RedisTests" />
-      <option name="METHOD_NAME" value="testHashes" />
+      <option name="MAIN_CLASS_NAME" value="com.newcoder.community.ElasticsearchTests" />
+      <option name="METHOD_NAME" value="testInsertList" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ElasticsearchTests.testSearchByTemplate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="community-master" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.newcoder.community.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.newcoder.community" />
+      <option name="MAIN_CLASS_NAME" value="com.newcoder.community.ElasticsearchTests" />
+      <option name="METHOD_NAME" value="testSearchByTemplate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="community-master" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.newcoder.community.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.newcoder.community" />
+      <option name="MAIN_CLASS_NAME" value="com.newcoder.community.MapperTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -188,21 +188,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.CaffeineTests.initDataForTest" />
       <item itemvalue="JUnit.CaffeineTests.testCache" />
-      <item itemvalue="JUnit.CaffeineTests" />
-      <item itemvalue="JUnit.RedisTests.testHashes" />
       <item itemvalue="JUnit.ElasticsearchTests.testInsert" />
+      <item itemvalue="JUnit.ElasticsearchTests.testSearchByTemplate" />
+      <item itemvalue="JUnit.MapperTest" />
+      <item itemvalue="JUnit.ElasticsearchTests.testInsertList" />
       <item itemvalue="Spring Boot.CommunityApplication" />
       <item itemvalue="Spring Boot.CommunityApplication (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ElasticsearchTests.testInsertList" />
+        <item itemvalue="JUnit.MapperTest" />
+        <item itemvalue="JUnit.ElasticsearchTests.testSearchByTemplate" />
         <item itemvalue="JUnit.ElasticsearchTests.testInsert" />
         <item itemvalue="JUnit.CaffeineTests.testCache" />
-        <item itemvalue="JUnit.RedisTests.testHashes" />
-        <item itemvalue="JUnit.CaffeineTests" />
-        <item itemvalue="JUnit.CaffeineTests.initDataForTest" />
       </list>
     </recent_temporary>
   </component>
@@ -228,6 +228,21 @@
       <workItem from="1658040473844" duration="6542000" />
       <workItem from="1658359795286" duration="1191000" />
       <workItem from="1658457530037" duration="3205000" />
+      <workItem from="1658970616392" duration="609000" />
+      <workItem from="1659064926626" duration="1021000" />
+      <workItem from="1659079046603" duration="34431000" />
+      <workItem from="1659497062398" duration="666000" />
+      <workItem from="1659505492592" duration="22085000" />
+      <workItem from="1659786280357" duration="15416000" />
+      <workItem from="1660094129838" duration="3385000" />
+      <workItem from="1660115544996" duration="5870000" />
+      <workItem from="1660288474330" duration="1898000" />
+      <workItem from="1660397524850" duration="2393000" />
+      <workItem from="1660704002895" duration="5326000" />
+      <workItem from="1661053319513" duration="6540000" />
+      <workItem from="1661258504410" duration="6176000" />
+      <workItem from="1661770242110" duration="18415000" />
+      <workItem from="1662021587333" duration="1894000" />
     </task>
     <servers />
   </component>
@@ -247,15 +262,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nowcoder/community/controller/HomeController.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="future" />

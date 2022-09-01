@@ -102,7 +102,7 @@ public class EventConsumer implements CommunityConstant {
         content.put("entityType", event.getEntityType());
         content.put("entityId", event.getEntityId());
 
-        //遍历map对象，再把key value放到content中
+        //遍历map对象，再把key value放到content中 post_id
         if (!event.getData().isEmpty()) {
             for (Map.Entry<String, Object> entry : event.getData().entrySet()) {
                 content.put(entry.getKey(), entry.getValue());

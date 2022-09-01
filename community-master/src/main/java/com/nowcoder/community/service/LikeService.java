@@ -15,7 +15,7 @@ public class LikeService {
 
     // 点赞
     public void like(int userId, int entityType, int entityId, int entityUserId) {
-        // redis 编程式事务
+        // redis 编程式事务 redis事务的主要作用就是串联多个命令防止 别的命令插队。
         redisTemplate.execute(new SessionCallback() {
             @Override
             public Object execute(RedisOperations operations) throws DataAccessException {
